@@ -20,13 +20,14 @@ The goals / steps of this project are the following:
 [//]: # (Image References)
 
 [image1]: ./writeup/data_visual.png "Visualization"
-[image2]: ./examples/grayscale.jpg "Grayscaling"
-[image3]: ./examples/random_noise.jpg "Random Noise"
+[image2]: ./writeup/gray_image.png "Grayscaling"
+[image3]: ./writeup/gray_pixel_shifted_image.png "Random Noise"
 [image4]: ./web/web_1_speed60.jpeg "Traffic Sign 1"
 [image5]: ./web/web_2_side_arrow.jpeg "Traffic Sign 2"
 [image6]: ./web/web_3_speed30.jpeg "Traffic Sign 3"
 [image7]: ./web/web_4_turn_left.jpeg "Traffic Sign 4"
 [image8]: ./web/web_5_caution.jpeg "Traffic Sign 5"
+[image9]: ./writeup/orig_image.png "Original image"
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -45,11 +46,11 @@ You're reading it! and here is a link to my [project code](https://github.com/sk
 I used the pandas library to calculate summary statistics of the traffic
 signs data set:
 
-* The size of training set is ?
-* The size of the validation set is ?
-* The size of test set is ?
-* The shape of a traffic sign image is ?
-* The number of unique classes/labels in the data set is ?
+* The size of training set is 34799
+* The size of the validation set is 4410
+* The size of test set is 12630
+* The shape of a traffic sign image is (32, 32, 3)
+* The number of unique classes/labels in the data set is 43
 
 #### 2. Include an exploratory visualization of the dataset.
 
@@ -68,6 +69,7 @@ And it did improve the accuracy by a few percentage points.
 
 Here is an example of a traffic sign image before and after grayscaling.
 
+![alt text][image9]
 ![alt text][image2]
 
 I also chose to normalize the data by centering it around 128 (0 mean) and scaling it to be between -1 and 1.
@@ -81,11 +83,16 @@ in the x and y directions. It was performed as following:
 - Randomly shift 25% of images up by 1 pixel
 - Randomly shift 25% of images down by 1 pixel
 
-Due to randomness of the procedure some images also got shifted diagonally towards the 4 corners.
+Due to randomness of the procedure some images also got shifted diagonally towards the 4 corners, increasing both the diversity
+and magnitude of the noise.
+
+![alt text][image3]
+
+The pixel shift needs to be minutely examined to verify.
 
 In effect, it helped improve the validation accuracy. 
 
-![alt text][image3]
+
 
 The difference between the original data set and the augmented data set is the following:
 
