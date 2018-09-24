@@ -64,7 +64,7 @@ Here is an exploratory visualization of the data set. It is a bar chart showing 
 
 As a first step, I decided to convert the images. I first tried with the given colored (3-channel) images
 and was not able to improving accuracy beyond 89%. Intuitively, it seems like most important
-aspects of a sign should be readable or learnt from a grayscale image. So I decided to try grayscaling.
+aspects of a sign should be readable or learnt from a grayscale image. So, I decided to try grayscaling.
 And it did improve the accuracy by a few percentage points.
 
 Here is an example of a traffic sign image before and after grayscaling.
