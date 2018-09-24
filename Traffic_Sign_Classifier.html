@@ -12561,17 +12561,17 @@ Test Accuracy = 0.927
 <span class="kn">import</span> <span class="nn">imageio</span>
 
 <span class="c1"># Test code for checking grayscaling and pixel shifting...</span>
-<span class="k">def</span> <span class="nf">testGrayScalingAndPixelShifting</span><span class="p">:</span>
-    <span class="n">imageOrg</span> <span class="o">=</span> <span class="n">imageio</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s2">&quot;web/web_3_speed30.jpeg&quot;</span><span class="p">)</span>
-    <span class="n">image</span> <span class="o">=</span> <span class="n">imageOrg</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
-    <span class="n">image</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">preProcessGrayscale</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-    <span class="n">image</span> <span class="o">=</span> <span class="n">image</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span> <span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-    <span class="n">image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">roll</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">roll</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span> <span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="c1">#def testGrayScalingAndPixelShifting:</span>
+<span class="c1">#    imageOrg = imageio.imread(&quot;web/web_3_speed30.jpeg&quot;)</span>
+<span class="c1">#    image = imageOrg.reshape((1, 32, 32, 3))</span>
+<span class="c1">#    image, _ = preProcessGrayscale(image, None)</span>
+<span class="c1">#    image = image[0].reshape(32, 32)</span>
+<span class="c1">#    plt.imshow (image, cmap=&quot;gray&quot;)</span>
+<span class="c1">#    plt.show()</span>
+<span class="c1">#    image = np.roll(image, 1, axis=1)</span>
+<span class="c1">#    image = np.roll(image, 1, axis=0)</span>
+<span class="c1">#    plt.imshow (image, cmap=&quot;gray&quot;)</span>
+<span class="c1">#    plt.show() </span>
 
 
 <span class="k">for</span> <span class="n">image_path</span> <span class="ow">in</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;web/web_*.jpeg&quot;</span><span class="p">):</span>
