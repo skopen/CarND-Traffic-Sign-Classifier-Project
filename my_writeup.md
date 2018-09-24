@@ -2,7 +2,7 @@
 
 ## Writeup
 
-### This is the writeup of my Traffic Sign Classifier project - skopen.
+### This is the writeup of my Traffic Sign Classifier project.
 
 ---
 
